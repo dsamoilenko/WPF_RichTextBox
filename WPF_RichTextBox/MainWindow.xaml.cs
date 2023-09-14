@@ -24,7 +24,7 @@ namespace WPF_RichTextBox
     /// </summary>
     public partial class MainWindow : Window
     {
-	// constractor
+	// constructor
         public MainWindow()
         {
             InitializeComponent();
