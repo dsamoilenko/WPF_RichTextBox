@@ -13,5 +13,6 @@ namespace WPF_RichTextBox
     /// </summary>
     public partial class App : Application
     {
+	string app_name = "Hello world";
     }
 }

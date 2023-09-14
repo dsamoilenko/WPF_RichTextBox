@@ -24,6 +24,7 @@ namespace WPF_RichTextBox
     /// </summary>
     public partial class MainWindow : Window
     {
+	// constractor
         public MainWindow()
         {
             InitializeComponent();
@@ -90,6 +91,7 @@ namespace WPF_RichTextBox
             saveFile.Filter = "XAML Files (*.xaml)|*.xaml|RichText Files (*.rtf)|*.rtf|All Files (*.*)|*.*";
             if (saveFile.ShowDialog() == true)
             {
+		// create textrange
                 TextRange documentTextRange = new TextRange(
                 richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd);
                 FileStream fs = File.Create(saveFile.FileName);
@@ -108,7 +110,6 @@ namespace WPF_RichTextBox
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
-            // Создание таблицы
             Table t1 = new Table();
 
             // Добавление столбца в таблицу
