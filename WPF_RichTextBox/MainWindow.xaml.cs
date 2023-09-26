@@ -26,7 +26,9 @@ namespace WPF_RichTextBox
     {
         int count = 0;
 
-	    // constructor
+        public int Count { get; set; }
+
+        // constructor
         public MainWindow()
         {
             InitializeComponent();
