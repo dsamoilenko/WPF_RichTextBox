@@ -38,12 +38,12 @@ namespace WPF_RichTextBox
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            // Создание документа
-            FlowDocument myFlowDoc = new FlowDocument();
+            // Создание главного документа
+            FlowDocument myFlowDocument = new FlowDocument();
 
             // Добавление блоков текста со своей разметкой
-            myFlowDoc.Blocks.Add(new Paragraph(new Run("Most of the time, you won’t create flow documents programmatically. However, you might want to create an application that browses through portions of a flow document and modifies them dynamically.")));
-            myFlowDoc.Blocks.Add(new Paragraph(new Run("However, because flow documents use deeply nested content with a freeflowing structure, you may need to dig through several layers to find the actual content you want to modify.")));
+            myFlowDocument.Blocks.Add(new Paragraph(new Run("Most of the time, you won’t create flow documents programmatically. However, you might want to create an application that browses through portions of a flow document and modifies them dynamically.")));
+            myFlowDocument.Blocks.Add(new Paragraph(new Run("However, because flow documents use deeply nested content with a freeflowing structure, you may need to dig through several layers to find the actual content you want to modify.")));
 
             // Создание жирного текста
             Bold bold1 = new Bold();
@@ -51,10 +51,10 @@ namespace WPF_RichTextBox
             bold1.Inlines.Add(new LineBreak());
 
             // Добавление жирного текста в параграф
-            myFlowDoc.Blocks.Add(new Paragraph(bold1));
+            myFlowDocument.Blocks.Add(new Paragraph(bold1));
 
             // Показать документ в richTextBox1
-            richTextBox1.Document = myFlowDoc;
+            richTextBox1.Document = myFlowDocument;
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
