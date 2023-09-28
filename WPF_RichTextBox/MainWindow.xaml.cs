@@ -24,8 +24,10 @@ namespace WPF_RichTextBox
     /// </summary>
     public partial class MainWindow : Window
     {
+        // count field
         int count = 0;
 
+        // Count of primitives
         public int Count { get; set; }
 
         // constructor
