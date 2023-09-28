@@ -84,9 +84,9 @@ namespace WPF_RichTextBox
             {
                 TextRange documentTextRange = new TextRange(
                 richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd);
-                FileStream fs = File.Open(openFile.FileName, FileMode.Open);
-                documentTextRange.Load(fs, DataFormats.Rtf);
-                fs.Close();
+                FileStream fs = File.Open(openFile.FileName, FileMode.Open);    // File open
+                documentTextRange.Load(fs, DataFormats.Rtf);                    // File load
+                fs.Close();                                                     // File close
             }
         }
 
@@ -97,14 +97,15 @@ namespace WPF_RichTextBox
             saveFile.Filter = "XAML Files (*.xaml)|*.xaml|RichText Files (*.rtf)|*.rtf|All Files (*.*)|*.*";
             if (saveFile.ShowDialog() == true)
             {
-		// create textrange
+		        // create textrange
                 TextRange documentTextRange = new TextRange(
                 richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd);
                 FileStream fs = File.Create(saveFile.FileName);
 
-                if (System.IO.Path.GetExtension(saveFile.FileName).ToLower() == ".rtf")
+                // File save
+                if (System.IO.Path.GetExtension(saveFile.FileName).ToLower() == ".html")
                 {
-                    documentTextRange.Save(fs, DataFormats.Rtf);
+                    documentTextRange.Save(fs, DataFormats.Html);
                 }
                 else
                 {
