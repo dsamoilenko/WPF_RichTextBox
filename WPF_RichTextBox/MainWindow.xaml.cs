@@ -84,9 +84,9 @@ namespace WPF_RichTextBox
             {
                 TextRange documentTextRange = new TextRange(
                 richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd);
-                FileStream fs = File.Open(openFile.FileName, FileMode.Open);
-                documentTextRange.Load(fs, DataFormats.Rtf);
-                fs.Close();
+                FileStream fs = File.Open(openFile.FileName, FileMode.Open);    // Open a file
+                documentTextRange.Load(fs, DataFormats.Rtf);                    // Load the file
+                fs.Close();                                                     // Close the file
             }
         }
 
@@ -102,9 +102,10 @@ namespace WPF_RichTextBox
                 richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd);
                 FileStream fs = File.Create(saveFile.FileName);
 
-                if (System.IO.Path.GetExtension(saveFile.FileName).ToLower() == ".rtf")
+                // Saving document
+                if (System.IO.Path.GetExtension(saveFile.FileName).ToLower() == ".txt")
                 {
-                    documentTextRange.Save(fs, DataFormats.Rtf);
+                    documentTextRange.Save(fs, DataFormats.Text);
                 }
                 else
                 {
